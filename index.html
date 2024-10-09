@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey with Border and Shadow</title>
+  <style>
+    /* 1. Body styling */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      font-family: arial;
+    }
+
+    /* 2. Container for the survey */
+    .survey-container {
+      width: 500px;
+      height: 277px;
+      border-radius: 8px;
+      box-shadow: 0px 15px 33px 4px #00000026;
+      padding: 40px;
+      margin-top: 50px;
+      position: relative;
+    }
+
+    /* 3. Header styling */
+    h2 {
+      margin-top: 0;
+      font-size: 35px;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    /* 4. Label and radio button styling */
+    label {
+      margin-right: 20px;
+    }
+
+    /* 5. Button positioning and style */
+    button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #007ce2FF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    /* 6. Button hover effect */
+    button:hover {
+      background-color: rgba(0, 124, 226, 0.73);
+    }
+
+    /* 7. Thank you message styling */
+    .thank-you {
+      display: none;
+      font-size: 20px;
+      color: green;
+      margin-top: 20px;
+    }
+
+    /* 8. Form flex layout */
+    .sr-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 9. Divider spacing */
+    .divider {
+      height: 10px;
+    }
+    .pagination {
+        font-size: 12px;
+        color: #aaa;
+        margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 10. Survey container with form -->
+  <div class="survey-container" id="surveyBox">
+    <h2>Question</h2>
+    <p class="pagination">1/1</p>
+    <form class="sr-form" id="surveyForm">
+      <!-- 11. Yes radio button -->
+      <label>
+        <input type="radio" name="survey" value="yes" required> Yes
+      </label>
+      <div class="divider"></div>
+      <!-- 12. No radio button -->
+      <label>
+        <input type="radio" name="survey" value="no"> No
+      </label>
+      <!-- 13. Submit button -->
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
+
+  <!-- 14. Thank you message container -->
+  <div class="thank-you" id="thankYouMessage">
+    Thank you for taking the time to complete this survey!
+  </div>
+
+  <!-- 15. JavaScript for form submission -->
+  <script>
+    document.getElementById("surveyForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("surveyBox").style.display = "none";
+      document.getElementById("thankYouMessage").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
